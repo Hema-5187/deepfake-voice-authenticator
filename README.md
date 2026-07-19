@@ -1,4 +1,5 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
 📖 Overview
 
 Deepfake Voice Authenticator is a production-ready AI-powered web application designed to distinguish between genuine human voices and AI-generated speech.
@@ -8,6 +9,7 @@ The application leverages Wav2Vec2 embeddings combined with a Support Vector Mac
 The platform also includes secure JWT authentication, prediction history, profile management, PDF report generation, and interactive visualizations, making it suitable for demonstrating AI-powered cybersecurity and multimedia forensics concepts.
 
 ✨ Features
+
 🔐 Secure User Authentication (JWT)
 🎙 Upload Audio Files
 🎤 Live Voice Recording
@@ -22,6 +24,7 @@ The platform also includes secure JWT authentication, prediction history, profil
 🗄 PostgreSQL Database
 🎨 Beautiful React Frontend
 🧠 AI Model
+
 
 The detection pipeline consists of:
 
@@ -265,6 +268,7 @@ Hema Maurya
 GitHub: https://github.com/Hema-5187
 
 LinkedIn: https://www.linkedin.com/in/hema-maurya-570920358
+
 ⭐ Support
 
 If you found this project helpful, please consider giving it a ⭐ Star on GitHub. It helps others discover the project and motivates further development.
