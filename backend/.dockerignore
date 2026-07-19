@@ -1,0 +1,17 @@
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+.git
+.gitignore
+
+uploads/
+
+training/datasets/
+training/embeddings/
+
+*.wav
+*.mp3
+
+.env
