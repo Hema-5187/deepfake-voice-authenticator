@@ -1,3 +1,5 @@
+from os import getenv
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -9,23 +11,26 @@ from app.api.history import router as history_router
 from app.api.dashboard import router as dashboard_router
 from app.api.profile import router as profile_router
 
-
 app = FastAPI(
     title="Deepfake Voice Authenticator"
 )
 
+# Allowed Frontend Origins
+origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+# Add deployed frontend URL (Vercel)
+frontend_url = getenv("FRONTEND_URL")
+if frontend_url:
+    origins.append(frontend_url)
+
 app.add_middleware(
     CORSMiddleware,
-
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
-
+    allow_origins=origins,
     allow_credentials=True,
-
     allow_methods=["*"],
-
     allow_headers=["*"],
 )
 
