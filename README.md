@@ -1,3 +1,4 @@
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 📖 Overview
 
 Deepfake Voice Authenticator is a production-ready AI-powered web application designed to distinguish between genuine human voices and AI-generated speech.
@@ -134,9 +135,12 @@ Backend URL
 
 http://localhost:8000
 
+
 Swagger
 
 http://localhost:8000/docs
+
+
 Frontend Setup
 cd frontend
 
@@ -144,9 +148,12 @@ npm install
 
 npm run dev
 
+
 Frontend URL
 
 http://localhost:5173
+
+
 📊 Workflow
 User
    │
@@ -170,12 +177,16 @@ Save to PostgreSQL
    │
    ▼
 Dashboard & History
+
+
 🔐 Authentication
 User Registration
 Secure Login
 JWT Access Token
 Protected API Endpoints
 Profile Management
+
+
 📈 Dashboard
 
 The application dashboard provides:
@@ -187,6 +198,8 @@ Detection Distribution
 Prediction Trends
 Recent Activity
 User Statistics
+
+
 📄 PDF Reports
 
 Users can generate professional PDF reports containing:
@@ -196,6 +209,8 @@ Prediction Summary
 Detection Statistics
 Complete History
 AI Model Details
+
+
 📷 Screenshots
 
 Add screenshots after deployment.
@@ -211,6 +226,8 @@ prediction.png
 history.png
 
 profile.png
+
+
 🌍 Future Improvements
 Real-time Streaming Detection
 Voice Biometrics
@@ -220,6 +237,8 @@ Cloud Storage
 Docker Deployment
 CI/CD Pipeline
 Role-Based Access Control
+
+
 🤝 Contributing
 
 Contributions are welcome.
@@ -232,16 +251,20 @@ git commit -m "Add new feature"
 Push
 git push origin feature-name
 Open a Pull Request
-📜 License
 
-This project is licensed under the MIT License.
+
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 👩‍💻 Author
 
 Hema Maurya
 
-GitHub: https://github.com/yourusername
-LinkedIn: https://linkedin.com/in/yourprofile
+GitHub: https://github.com/Hema-5187
+
+LinkedIn: https://www.linkedin.com/in/hema-maurya-570920358
 ⭐ Support
 
 If you found this project helpful, please consider giving it a ⭐ Star on GitHub. It helps others discover the project and motivates further development.
