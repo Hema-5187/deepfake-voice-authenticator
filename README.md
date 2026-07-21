@@ -1,103 +1,241 @@
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+# 🎙️ Deepfake Voice Authenticator
 
-📖 Overview
+> An AI-powered web application for detecting whether an uploaded voice recording is **Real** or **AI-Generated (Deepfake)** using a dedicated Machine Learning inference service.
 
-Deepfake Voice Authenticator is a production-ready AI-powered web application designed to distinguish between genuine human voices and AI-generated speech.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-The application leverages Wav2Vec2 embeddings combined with a Support Vector Machine (SVM) classifier to analyze uploaded or recorded audio and determine whether it is Real or Fake. Users receive confidence scores, probability estimates, and detailed analytics through an intuitive dashboard.
+---
 
-The platform also includes secure JWT authentication, prediction history, profile management, PDF report generation, and interactive visualizations, making it suitable for demonstrating AI-powered cybersecurity and multimedia forensics concepts.
+# 📌 Overview
 
-✨ Features
+Deepfake Voice Authenticator is a secure AI-powered web application that detects AI-generated voice recordings. The system combines a React frontend, a FastAPI authentication backend, and a dedicated Machine Learning inference service.
 
-🔐 Secure User Authentication (JWT)
-🎙 Upload Audio Files
-🎤 Live Voice Recording
-🤖 AI-Powered Deepfake Detection
-📊 Confidence & Probability Analysis
-📈 Interactive Dashboard
-📜 Prediction History
-📄 PDF Report Generation
-👤 User Profile Management
-📱 Responsive Modern UI
-⚡ FastAPI REST API
-🗄 PostgreSQL Database
-🎨 Beautiful React Frontend
-🧠 AI Model
+Users can securely register, log in, upload audio recordings, and receive predictions indicating whether the voice is **REAL** or **FAKE**. Every prediction is stored in PostgreSQL and is accessible through the user's history dashboard.
 
+The Machine Learning model is isolated into its own inference service, making the application scalable, modular, and production-ready.
 
-The detection pipeline consists of:
+---
 
-Feature Extractor: Facebook Wav2Vec2
-Embedding Size: 768
-Classifier: Support Vector Machine (SVM)
-Framework: PyTorch + Transformers
-Audio Processing: Librosa
-Detection Output
-Prediction (Real / Fake)
-Probability Score
-Confidence Level
-Processing Time
-Model Version
-🛠 Tech Stack
-Frontend
-React 19
-Vite
-Tailwind CSS
-Axios
-React Router
-Recharts
-Framer Motion
-React Hot Toast
-jsPDF
-WaveSurfer.js
-Backend
-FastAPI
-SQLAlchemy
-PostgreSQL
-JWT Authentication
-Pydantic
-Uvicorn
-Alembic
-Machine Learning
-PyTorch
-Transformers
-Wav2Vec2
-Scikit-learn
-NumPy
-Pandas
-Librosa
-📂 Project Structure
-deepfake-voice-authenticator
+# ✨ Features
+
+### 🔐 Authentication
+
+- User Registration
+- Secure Login
+- JWT Authentication
+- Password Hashing
+- Protected Routes
+
+### 🎤 Audio Authentication
+
+- Upload Audio Files
+- Deepfake Voice Detection
+- Confidence Score
+- Probability Score
+- Processing Time
+- Model Information
+
+### 📊 History
+
+- Prediction History
+- View Previous Analyses
+- Stored in PostgreSQL
+
+### ⚙️ Backend
+
+- FastAPI REST API
+- SQLAlchemy ORM
+- Pydantic Validation
+- Professional Logging
+- Docker PostgreSQL Support
+
+### 🤖 AI Inference
+
+- Dedicated ML Microservice
+- Wav2Vec2 Feature Extraction
+- Support Vector Machine (SVM) Classification
+
+---
+
+# 🏗 System Architecture
+
+```text
+                    React Frontend
+                          │
+                          ▼
+                FastAPI Authentication API
+                          │
+                          ▼
+            Deepfake Voice Inference API
+          (Wav2Vec2 + SVM Classification)
+                          │
+                          ▼
+                  PostgreSQL Database
+```
+
+---
+
+# 🔄 Workflow
+
+1. User registers and logs in.
+2. JWT token is generated.
+3. User uploads an audio recording.
+4. Backend validates the request.
+5. Audio is sent to the Inference API.
+6. The ML model extracts Wav2Vec2 embeddings.
+7. The SVM classifier predicts whether the voice is REAL or FAKE.
+8. Results are returned to the backend.
+9. Prediction details are stored in PostgreSQL.
+10. User can view the prediction in the History page.
+
+---
+
+# 🧠 Machine Learning Pipeline
+
+### Feature Extraction
+
+- Facebook Wav2Vec2
+- Embedding Size: **768**
+
+### Classifier
+
+- Support Vector Machine (SVM)
+
+### Prediction Output
+
+- REAL
+- FAKE
+
+### Returned Information
+
+- Prediction
+- Probability
+- Confidence
+- Processing Time
+- Model Version
+- Audio Statistics
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React
+- Axios
+- React Router
+- CSS
+
+## Backend
+
+- FastAPI
+- SQLAlchemy
+- Pydantic
+- JWT Authentication
+- Passlib
+- Requests
+
+## Machine Learning
+
+- Transformers
+- Wav2Vec2
+- Scikit-learn
+- NumPy
+- Librosa
+- Joblib
+
+## Database
+
+- PostgreSQL
+
+## DevOps
+
+- Docker
+- Git
+- GitHub
+
+---
+
+# 📂 Project Structure
+
+```text
+deepfake-voice-authenticator/
 │
-├── backend
-│   ├── app
-│   ├── training
-│   │   └── models
-│   │       └── deepfake_model.pkl
-│   ├── uploads
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   ├── core/
+│   │   ├── models/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── config.py
+│   │   ├── logger.py
+│   │   └── main.py
+│   │
+│   ├── uploads/
 │   ├── requirements.txt
-│   └── .env
+│   ├── Dockerfile
+│   └── .env.example
 │
-├── frontend
-│   ├── src
-│   ├── public
-│   ├── package.json
-│   └── vite.config.js
+├── frontend/
 │
-├── .gitignore
 └── README.md
+```
 
+---
 
-🚀 Installation
+# 🌐 API Endpoints
 
-Kaggle dataset  https://www.kaggle.com/datasets/adarshsingh0903/audio-deepfake-detection-dataset
+## Authentication
 
-Clone Repository
+| Method | Endpoint | Description |
+|----------|-----------|-------------|
+| POST | `/auth/register` | Register a new user |
+| POST | `/auth/login` | Login user |
+
+---
+
+## Audio
+
+| Method | Endpoint | Description |
+|----------|-----------|-------------|
+| POST | `/audio/upload` | Upload audio for prediction |
+| GET | `/audio/history` | View prediction history |
+| GET | `/audio/{id}` | Get prediction details |
+| DELETE | `/audio/{id}` | Delete prediction record |
+
+---
+
+# 🔒 Security
+
+- JWT Authentication
+- Password Hashing
+- Protected Endpoints
+- Environment Variables
+- Input Validation
+- File Validation
+- Secure Database Storage
+
+---
+
+# 🚀 Installation
+
+## Clone Repository
+
+```bash
 git clone https://github.com/Hema-5187/deepfake-voice-authenticator.git
+```
 
-cd deepfake-voice-authenticator
-Backend Setup
+---
+
+## Backend
+
+```bash
 cd backend
 
 python -m venv venv
@@ -105,170 +243,80 @@ python -m venv venv
 # Windows
 venv\Scripts\activate
 
-# Linux/Mac
-source venv/bin/activate
-
-Install dependencies
-
 pip install -r requirements.txt
 
-Create .env
-
-DATABASE_URL=
-
-SECRET_KEY=
-
-REDIS_URL=
-
-DEBUG=True
-
-MODEL_NAME=facebook/wav2vec2-base
-
-MODEL_CACHE=./model_cache
-
-MAX_AUDIO_DURATION=30
-
-MIN_AUDIO_DURATION=1
-
-Run Backend
-
 uvicorn app.main:app --reload
+```
 
-Backend URL
+---
 
-http://localhost:8000
+## Frontend
 
-
-Swagger
-
-http://localhost:8000/docs
-
-
-Frontend Setup
+```bash
 cd frontend
 
 npm install
 
 npm run dev
+```
 
+---
 
-Frontend URL
+# ⚙️ Environment Variables
 
-http://localhost:5173
+Create a `.env` file.
 
+```env
+DATABASE_URL=your_database_url
 
-📊 Workflow
-User
-   │
-   ▼
-Upload / Record Audio
-   │
-   ▼
-Audio Preprocessing
-   │
-   ▼
-Wav2Vec2 Feature Extraction
-   │
-   ▼
-SVM Classification
-   │
-   ▼
-Prediction Result
-   │
-   ▼
-Save to PostgreSQL
-   │
-   ▼
-Dashboard & History
+SECRET_KEY=your_secret_key
 
+ALGORITHM=HS256
 
-🔐 Authentication
-User Registration
-Secure Login
-JWT Access Token
-Protected API Endpoints
-Profile Management
+ACCESS_TOKEN_EXPIRE_MINUTES=30
 
+INFERENCE_API_URL= https://your-inference-service-url/predict
 
-📈 Dashboard
+INFERENCE_TIMEOUT=60
+```
 
-The application dashboard provides:
+---
 
-Total Predictions
-Real Voice Count
-Fake Voice Count
-Detection Distribution
-Prediction Trends
-Recent Activity
-User Statistics
+# 🚀 Deployment
 
+| Component | Platform |
+|------------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Inference API | Render |
+| Database | Neon PostgreSQL |
 
-📄 PDF Reports
+---
 
-Users can generate professional PDF reports containing:
+# 🔮 Future Improvements
 
-User Information
-Prediction Summary
-Detection Statistics
-Complete History
-AI Model Details
+- Batch Audio Analysis
+- Email Verification
+- Password Reset
+- CI/CD Pipeline
+- Multi-language Support
 
+---
 
-📷 Screenshots
+# 📄 License
 
-Add screenshots after deployment.
+This project is licensed under the **MIT License**.
 
-screenshots/
+---
 
-login.png
+# 👩‍💻 Author
 
-dashboard.png
+**Hema Maurya**
 
-prediction.png
+B.E. Computer Science & Engineering (AI & ML)
 
-history.png
+Viva Institute of Technology
 
-profile.png
+---
 
-
-🌍 Future Improvements
-Real-time Streaming Detection
-Voice Biometrics
-Multi-language Detection
-Explainable AI (XAI)
-Cloud Storage
-Docker Deployment
-CI/CD Pipeline
-Role-Based Access Control
-
-
-🤝 Contributing
-
-Contributions are welcome.
-
-Fork the repository
-Create a new branch
-git checkout -b feature-name
-Commit changes
-git commit -m "Add new feature"
-Push
-git push origin feature-name
-Open a Pull Request
-
-
-
-## 📜 License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-👩‍💻 Author
-
-Hema Maurya
-
-GitHub: https://github.com/Hema-5187
-
-LinkedIn: https://www.linkedin.com/in/hema-maurya-570920358
-
-⭐ Support
-
-If you found this project helpful, please consider giving it a ⭐ Star on GitHub. It helps others discover the project and motivates further development.
+⭐ If you found this project useful, consider giving it a star on GitHub!

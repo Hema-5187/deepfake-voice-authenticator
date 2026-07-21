@@ -2,15 +2,30 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 
+# ==========================================
+# Load Environment Variables
+# ==========================================
+
 load_dotenv()
 
 # ==========================================
-# Environment Variables
+# Application Settings
 # ==========================================
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+# ==========================================
+# Inference API
+# ==========================================
+
+INFERENCE_API_URL = os.getenv("INFERENCE_API_URL")
+
+# Request timeout (seconds)
+INFERENCE_TIMEOUT = int(os.getenv("INFERENCE_TIMEOUT", "60"))
 
 # ==========================================
 # Base Directories
@@ -25,9 +40,11 @@ PROCESSED_DATASET_DIR = DATASET_DIR / "processed"
 SPECTROGRAM_DIR = DATASET_DIR / "spectrograms"
 METADATA_DIR = DATASET_DIR / "metadata"
 
-# New folders for training
+# Training folders
 EMBEDDING_DIR = BASE_DIR / "embeddings"
 MODEL_DIR = BASE_DIR / "models"
+
+UPLOAD_DIR = BASE_DIR / "uploads"
 
 # ==========================================
 # Dataset Structure
@@ -49,8 +66,11 @@ SUPPORTED_AUDIO_FORMATS = [
     ".wav",
     ".mp3",
     ".m4a",
-    ".flac"
+    ".flac",
 ]
+
+# Maximum upload size (10 MB)
+MAX_UPLOAD_SIZE = 10 * 1024 * 1024
 
 # ==========================================
 # Wav2Vec2
@@ -59,10 +79,11 @@ SUPPORTED_AUDIO_FORMATS = [
 WAV2VEC2_MODEL = "facebook/wav2vec2-large-960h-lv60-self"
 
 # ==========================================
-# ML Training
+# Machine Learning
 # ==========================================
 
 TEST_SIZE = 0.20
+
 RANDOM_STATE = 42
 
 # ==========================================
@@ -70,7 +91,9 @@ RANDOM_STATE = 42
 # ==========================================
 
 EMBEDDINGS_FILE = EMBEDDING_DIR / "embeddings.npy"
+
 LABELS_FILE = EMBEDDING_DIR / "labels.npy"
 
 CLASSIFIER_FILE = MODEL_DIR / "embedding_model.pkl"
+
 SCALER_FILE = MODEL_DIR / "scaler.pkl"

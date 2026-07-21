@@ -2,6 +2,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
+
+MODEL_FILE = os.getenv(
+    "MODEL_FILE",
+    "embedding_model.pkl"
+)
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 load_dotenv(BASE_DIR / ".env")
