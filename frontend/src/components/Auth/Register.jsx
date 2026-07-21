@@ -44,18 +44,23 @@ const Register = () => {
 
             navigate("/login");
 
-        } catch (error) {
+} catch (error) {
 
-            toast.error(
-                error.response?.data?.detail ||
-                "Registration Failed"
-            );
+    const detail = error.response?.data?.detail;
 
-        } finally {
+    if (Array.isArray(detail)) {
+        toast.error(detail[0].msg);
+    } else if (typeof detail === "string") {
+        toast.error(detail);
+    } else {
+        toast.error("Registration Failed");
+    }
 
-            setLoading(false);
+} finally {
 
-        }
+    setLoading(false);
+
+}
 
     };
 
