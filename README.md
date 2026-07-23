@@ -23,7 +23,7 @@ The Machine Learning model is isolated into its own inference service, making th
 # 🎤 Deepfake Voice Authenticator
 
 <p align="center">
-  <img src="screenshots/DEEPFAKE Thumbnail Image.png.png" alt="Deepfake Voice Authenticator Thumbnail" width="100%">
+  <img src="screenshots/DEEPFAKE Thumbnail Image.png" alt="Deepfake Voice Authenticator Thumbnail" width="100%">
 </p>
 ---
 
@@ -243,8 +243,8 @@ deepfake-voice-authenticator/
 </p>
 
 <p align="center">
-  <img src="screenshots/.png" width="48%">
-  <img src="screenshots/history.png" width="48%">
+  <img src="screenshots/Prediction.png" width="48%">
+  <img src="screenshots/History.png" width="48%">
 </p>
 
 <p align="center">
