@@ -19,6 +19,12 @@ Users can securely register, log in, upload audio recordings, and receive predic
 
 The Machine Learning model is isolated into its own inference service, making the application scalable, modular, and production-ready.
 
+
+# 🎤 Deepfake Voice Authenticator
+
+<p align="center">
+  <img src="assets/DEEPFAKE Thumbnail Image.png" alt="Deepfake Voice Authenticator Thumbnail" width="100%">
+</p>
 ---
 
 # ✨ Features
@@ -187,7 +193,69 @@ deepfake-voice-authenticator/
 └── README.md
 ```
 
+
 ---
+### Demo 
+
+
+## YouTube : https://youtu.be/JozBmlopJaQ?si=VJUMbj4WA4-cS9fi
+
+
+## Frontend : https://deepfake-voice-authenticator-five.vercel.app
+
+
+## Backend : https://deepfake-voice-authenticator-l9qa.onrender.com/docs
+
+
+## Google Colab : https://colab.research.google.com/drive/1WM0-_io58R-2IbJej2PHLyHVhzH_OuCC?usp=sharing
+
+
+# Note: First run the google colab then the backend and frontend.
+
+
+---
+
+<h2 align="center">📸 Application Screenshots</h2>
+
+<p align="center">
+  <img src="screenshots/Login.png" width="48%">
+  <img src="screenshots/Dashboard.png" width="48%">
+  <img src="screenshots/Dashboard1.png" width="48%">
+  <img src="screenshots/Dashboard2.png" width="48%">
+</p>
+
+<p align="center">
+  <img src="screenshots/AiDetection.png" width="48%">
+  <img src="screenshots/Ai1.png" width="48%">
+  <img src="screenshots/Ai2.png" width="48%">
+  <img src="screenshots/Ai3.png" width="48%">
+  <img src="screenshots/History.png" width="48%">
+</p>
+
+<p align="center">
+  <img src="screenshots/Profile.png" width="48%">
+  <img src="screenshots/Analytics.png" width="48%">
+  <img src="screenshots/Rerport.png" width="48%">
+  <img src="screenshots/Rerport1.png" width="48%">
+  <img src="screenshots/Rerport2.png" width="48%">
+  <img src="screenshots/Rerport3.png" width="48%">
+  <img src="screenshots/Rerport4.png" width="48%">
+</p>
+
+<p align="center">
+  <img src="screenshots/.png" width="48%">
+  <img src="screenshots/history.png" width="48%">
+</p>
+
+<p align="center">
+  <img src="screenshots/Backend-Swagger.png" width="48%">
+  <img src="screenshots/Swagger1.png" width="48%">
+  <img src="screenshots/Swagger Authorize.png" width="48%">
+  <img src="screenshots/Authorize Done.png" width="48%">
+  <img src="screenshots/Swagger2.png" width="48%">
+  <img src="screenshots/Swagger3.png" width="48%">
+</p>
+
 
 # 🌐 API Endpoints
 
@@ -229,6 +297,11 @@ deepfake-voice-authenticator/
 
 ```bash
 git clone https://github.com/Hema-5187/deepfake-voice-authenticator.git
+
+
+
+For ML Inference clone this repository in another folder
+git clone https://github.com/Hema-5187/deepfake-voice-inference.git
 ```
 
 ---
@@ -295,11 +368,13 @@ INFERENCE_TIMEOUT=60
 
 # 🔮 Future Improvements
 
+- Real-time Voice Authentication during phone calls and develop mobile application for Android and iOS
 - Batch Audio Analysis
 - Email Verification
 - Password Reset
 - CI/CD Pipeline
 - Multi-language Support
+- Deploying the ML model permanently on GPU Cloud Infrastructure
 
 ---
 
